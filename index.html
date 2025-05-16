@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="%VITE_FAVICON_URL%" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="renderer" content="webkit" />
+    <title>%VITE_GLOBAL_APP_TITLE%</title>
+    <style>
+      #app-loading {
+        width: 75px;
+        height: 86px;
+        background-color: rgba(29, 116, 245, 0.08);
+        border-radius: 50px 50px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #app-loading .box {
+        width: 16px;
+        height: 41px;
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        flex-direction: column;
+        transform-origin: top;
+        transform: rotate(0deg);
+        animation: swing 1.5s infinite ease-in-out;
+      }
+
+      #app-loading .box .line {
+        width: 2px;
+        height: 25px;
+        background: #333;
+        border-radius: 10px;
+      }
+
+      #app-loading .box .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #1ddff5;
+        animation: changeColor 1.5s infinite ease-in-out;
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(35deg);
+        }
+
+        50% {
+          transform: rotate(-35deg);
+        }
+
+        100% {
+          transform: rotate(35deg);
+        }
+      }
+
+      @keyframes changeColor {
+        0% {
+          background: #1ddff5;
+        }
+
+        30% {
+          background: #1d74f5;
+        }
+
+        50% {
+          background: #331df5;
+        }
+
+        70% {
+          background: #331df5;
+        }
+
+        100% {
+          background: #1ddff5;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <div id="app-loading">
+      <div class="box">
+        <div class="line w2 h25"></div>
+        <div class="dot w16 h16 br10"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
